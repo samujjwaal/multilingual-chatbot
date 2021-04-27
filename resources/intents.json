@@ -1,0 +1,78 @@
+{
+	"intents": [{
+			"tag": "greeting",
+			"patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day"],
+			"responses": ["Hello, Do You want to order pizza?"],
+			"context": ["Pizza_order"]
+		},
+
+		{
+			"tag": "Pizza_order",
+			"patterns": ["Yes", "yes I wanna", "yeah"],
+			"responses": ["Please choose your crust options: classic crust, thin crust, vegan thin crust, cheese burst"],
+			"context": ["options_Crust"]
+		},
+		{
+			"tag": "wrong entry",
+			"patterns": [""],
+			"responses": ["sorry I did not understand"],
+			"context": ["sauce_select","cheese","options_Crust","topping"]
+		},
+
+		{
+			"tag": "goodbye",
+			"patterns": ["Bye", "thanks", "done", "no", "nothing else ","cancel"],
+			"responses": ["Bye! Come back again soon."],
+			"context": [""]
+		},
+
+		{
+			"tag": "options_Crust",
+			"patterns": ["thin crust", "vegan thin crust", "cheese burst", "classic crust","classic"],
+			"responses": ["Please choose your crust options: red sauce, white sauce, spicy red sauce"],
+			"context": ["sauce_select"]
+		},
+		{
+			"tag": "sauce_select",
+			"patterns": ["red sauce", "white sauce", "spicy red sauce"],
+			"responses": ["select your topping combo: pepperoni, chicken, non_veg(pork + chicken), no topping(only cheese), classic veg(mix of veg)"],
+			"context": ["topping"]
+		},
+		{
+			"tag": "topping",
+			"patterns": ["pepperoni", "Open adverse drugs module", "chicken", "non_veg(pork+chicken)", "no topping(only cheese)", "classic veg"],
+			"responses": ["Select the choice of cheese: only parmesan, only feta, only cheddar, (parmesan + cheddar), (parmesan + feta), vegan cheese"],
+			"context": ["cheese"]
+		},
+		{
+			"tag": "cheese",
+			"patterns": ["only parmesan","only feta","parmesan", "feta", "cheddar", "parmesan+cheddar", "parmesan+feta", "vegan cheese"],
+			"responses": ["Would like to order any drink: soda - coke, soda - sprite, lemonade - inhouse"],
+			"context": ["drink"]
+		},
+		{
+			"tag": "drink",
+			"patterns": ["soda-coke", "soda-sprite", "lemonade-inhouse","coke","soda","sprite"],
+			"responses": ["Thank you, entering all your preferences: would like to choose delivery(+5 $) or pickup(free)"],
+			"context": ["address"]
+		},
+		{
+			"tag": "delivery",
+			"patterns": ["delivery"],
+			"responses": ["please provide your card details for billing"],
+			"context": ["card"]
+		},
+		{
+			"tag": "pickup",
+			"patterns": ["pickup"],
+			"responses": ["please provide your card details for billing"],
+			"context": ["card"]
+		},
+		{
+			"tag": "card",
+			"patterns": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$",
+			"responses": ["thank your order has been placed, would you like to place another order"],
+			"context": [""]
+		}
+	]
+}
