@@ -1,6 +1,6 @@
 # Multilingual Chatbot
 
-## Course Project - CS 521 Statistical NLP - Spring
+## Course Project - CS 521 Statistical NLP - Spring 2021
 
 ### Team Members: Meghana Jagadish and Samujjwaal Dey
 
